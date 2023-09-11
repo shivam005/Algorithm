@@ -39,3 +39,49 @@ max(arr);
 }
 
 ```
+
+We can also solve it using single traversal but we will have make it two step process. In this first step, we will be checking if the traversing element is smaller than   small variable  element and if found true then we will make the travesing element "smallest" and the small variablem element as second smallest. Further in order to add another level of filtration, we will be making a comparison between traversing element with the second smallest element as well as the traversing element should not be equal to the small variable element then we can update the second smallest variable element to the current traversing element. 
+
+
+```
+package Array;
+
+import java.util.Arrays;
+
+public class Shiva {
+
+    public static void max(int[] arr){
+        int max=Integer.MIN_VALUE;
+        int min=Integer.MAX_VALUE;
+        int second_Max=Integer.MIN_VALUE;
+        int second_Min=Integer.MAX_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]<min ){
+                second_Min=min;
+                min=arr[i];
+            } else if (arr[i]< second_Min && arr[i]!=min ) {
+                second_Min=arr[i];
+            }
+        }
+        System.out.println(" second_min "+second_Min);
+
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>max ){
+                second_Max=max;
+                max=arr[i];
+            } else if (arr[i]> second_Max && arr[i]!=max) {
+                second_Max=arr[i];
+            }
+        }
+        System.out.println(" second_max "+ second_Max);
+    }
+
+
+    public static void main(String[] args) {
+        int[] arr={2,21,0,2,1,3,2};
+max(arr);
+
+    }
+}
+
+```
