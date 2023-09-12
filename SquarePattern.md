@@ -2,6 +2,7 @@
 Herein, the first loop is reponsible for the rows whatever changes we have got to make in the rows we do it in the first for loop. 
 Second for loop is for the columns.
 
+Check here, we are just changing the row in the first for loop using new line and in the second loop we are just printing the * without changing the line. 
 ```
 package Array;
 
